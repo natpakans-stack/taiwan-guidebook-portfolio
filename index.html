@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwan Travel Guidebook — Design Thinking Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8f9fb;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-secondary: #475569;
+            --accent: #3b82f6;
+            --accent-dark: #1e40af;
+            --accent-light: #eff6ff;
+            --green: #10b981;
+            --green-light: #e8faf0;
+            --orange: #f59e0b;
+            --orange-light: #fffbeb;
+            --red: #dc2626;
+            --red-light: #fee2e2;
+            --purple: #7c3aed;
+            --purple-light: #f5f3ff;
+            --border: #e2e8f0;
+            --code-bg: #334155;
+            --code-text: #f1f5f9;
+            --tag-bg: #f1f5f9;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --max-w: 780px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'IBM Plex Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.04) 0%, transparent 50%);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #E74C5E, #f59e0b, #10b981, #3b82f6);
+        }
+        .hero-inner {
+            position: relative;
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+        .hero h1 .emoji { font-size: clamp(2rem, 5.5vw, 3rem); }
+        .hero p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .hero-link {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 12px 28px;
+            background: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 50px;
+            color: #1a1a2e;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        .hero-link:hover {
+            background: #f0f9ff;
+            border-color: #f0f9ff;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        article { padding: 48px 0 80px; }
+
+        /* ===== SECTION INTRO ===== */
+        .section-intro { margin: 48px 0 24px; }
+        .section-intro:first-child { margin-top: 0; }
+        .section-intro h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .section-intro p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ===== PAIN CARD ===== */
+        .pain-card {
+            background: linear-gradient(135deg, #fee2e2, #fef2f2);
+            border: 2px solid #fca5a5;
+            border-radius: var(--radius);
+            padding: 28px;
+            margin: 24px 0;
+        }
+        .pain-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #b91c1c;
+            margin-bottom: 12px;
+        }
+        .pain-list { list-style: none; }
+        .pain-list li {
+            position: relative;
+            padding: 6px 0 6px 28px;
+            font-size: 0.92rem;
+            color: #991b1b;
+            line-height: 1.65;
+        }
+        .pain-list li::before {
+            content: '✕';
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: 700;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            border: none;
+            height: 1px;
+            background: var(--border);
+            margin: 40px 0;
+        }
+
+        /* ===== DT STEPS ===== */
+        .dt-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .dt-step {
+            background: #f8fafc;
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        .dt-step.green { border-left-color: var(--green); }
+        .dt-step.orange { border-left-color: var(--orange); }
+        .dt-step.purple { border-left-color: var(--purple); }
+        .dt-step .step-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1e40af;
+            margin-bottom: 4px;
+        }
+        .dt-step.green .step-label { color: #047857; }
+        .dt-step.orange .step-label { color: #c2410c; }
+        .dt-step.purple .step-label { color: #7c3aed; }
+        .dt-step .step-content {
+            font-size: 0.92rem;
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        /* ===== SOLUTION CARD ===== */
+        .solution-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin: 24px 0;
+            box-shadow: var(--shadow);
+        }
+        .solution-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .solution-card .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            margin-bottom: 20px;
+        }
+
+        /* ===== TAGS ===== */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+        }
+        .tag.blue { background: var(--accent-light); color: #1e40af; border-color: #bfdbfe; }
+        .tag.green { background: var(--green-light); color: #047857; border-color: #a7f3d0; }
+        .tag.orange { background: var(--orange-light); color: #c2410c; border-color: #fde68a; }
+        .tag.purple { background: var(--purple-light); color: #7c3aed; border-color: #ddd6fe; }
+        .tag.red { background: var(--red-light); color: #b91c1c; border-color: #fca5a5; }
+
+        /* ===== FEATURES LIST ===== */
+        .features { list-style: none; margin: 16px 0; }
+        .features li {
+            position: relative;
+            padding: 6px 0 6px 28px;
+            font-size: 0.95rem;
+        }
+        .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ===== JOURNEY FLOW ===== */
+        .flow-diagram {
+            background: linear-gradient(135deg, #f0f9ff, #f0fdf4);
+            border: 1px solid #d1e7dd;
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            overflow-x: auto;
+        }
+        .journey-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            align-items: center;
+        }
+        .journey-step {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+            max-width: 520px;
+        }
+        .journey-num {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: #2563eb;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+        .journey-num.green { background: #047857; }
+        .journey-num.orange { background: #b45309; }
+        .journey-num.red { background: var(--red); }
+        .journey-num.purple { background: var(--purple); }
+        .journey-text {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.5;
+        }
+        .journey-text strong { color: var(--accent-dark); }
+        .journey-connector {
+            width: 2px;
+            height: 20px;
+            background: #cbd5e1;
+            margin-left: 15px;
+        }
+        .journey-text .page-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 1px 8px;
+            border-radius: 4px;
+            margin-left: 4px;
+        }
+        .journey-text .page-tag.guide { background: #1a1a2e; color: #fff; }
+        .journey-text .page-tag.budget { background: #2A6FDB; color: #fff; }
+        .journey-text .page-tag.docs { background: #6d28d9; color: #fff; }
+
+        /* ===== ARCHITECTURE ===== */
+        .flow-section { margin: 32px 0; }
+        .flow-section h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .arch-flow {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            justify-content: center;
+        }
+        .arch-flow .node {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+            text-align: center;
+        }
+        .arch-flow .node.highlight {
+            border-color: var(--accent);
+            background: var(--accent-light);
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+        .arch-flow .arrow {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* ===== VERSION TIMELINE ===== */
+        .version-timeline {
+            margin: 24px 0;
+        }
+        .version-item {
+            display: flex;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: flex-start;
+        }
+        .version-item:last-child { border-bottom: none; }
+        .version-badge {
+            min-width: 52px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .version-badge.v-blue { background: var(--accent-light); color: var(--accent-dark); }
+        .version-badge.v-green { background: var(--green-light); color: #047857; }
+        .version-badge.v-orange { background: var(--orange-light); color: #c2410c; }
+        .version-badge.v-purple { background: var(--purple-light); color: #7c3aed; }
+        .version-desc {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .version-desc strong { color: var(--accent-dark); }
+
+        /* ===== PHONE PREVIEW ===== */
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin: 24px 0;
+        }
+        .preview-item { text-align: center; }
+        .preview-item h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .phone-frame {
+            background: #475569;
+            border-radius: 32px;
+            padding: 12px;
+            width: 240px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+        }
+        .phone-screen {
+            background: #fff;
+            border-radius: 22px;
+            overflow: hidden;
+        }
+        .phone-statusbar {
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .phone-statusbar span {
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+        .phone-statusbar.dark { background: #1a1a2e; }
+        .phone-statusbar.blue { background: var(--accent); }
+        .phone-statusbar.purple { background: #7B61FF; }
+        .phone-content { padding: 16px 14px; }
+
+        /* ===== MOCK UI ELEMENTS ===== */
+        .mock-nav-row {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding: 6px 0 10px;
+        }
+        .mock-nav-pill {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            white-space: nowrap;
+            background: #f1f5f9;
+            color: var(--text-secondary);
+        }
+        .mock-nav-pill.active {
+            background: var(--accent-light);
+            color: var(--accent-dark);
+        }
+        .mock-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        .mock-card .mc-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .mock-card .mc-desc {
+            font-size: 0.62rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .mock-card .mc-time {
+            font-size: 0.58rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        .mock-bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0 4px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 8px;
+        }
+        .mock-bnav-item {
+            text-align: center;
+            font-size: 0.5rem;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+        .mock-bnav-item.active { color: var(--accent); }
+        .mock-bnav-item .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            margin: 0 auto 2px;
+        }
+        .mock-bnav-item.active .dot { background: var(--accent); }
+
+        /* ===== METRICS ===== */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .metric-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .metric-card .num {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .metric-card .num.green { color: var(--green); }
+        .metric-card .num.orange { color: var(--orange); }
+        .metric-card .num.purple { color: var(--purple); }
+        .metric-card .label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* ===== INSIGHT BOX ===== */
+        .insight-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+        .insight-box h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 8px;
+        }
+        .insight-box p, .insight-box li {
+            font-size: 0.9rem;
+            color: #92400e;
+            line-height: 1.7;
+        }
+        .insight-box ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+        .insight-box ul li {
+            padding: 3px 0 3px 20px;
+            position: relative;
+        }
+        .insight-box ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #c2410c;
+            font-weight: 700;
+        }
+
+        /* ===== CREATIVE BOX ===== */
+        .creative-box {
+            background: linear-gradient(135deg, #faf5ff, #eff6ff);
+            border: 1px solid #ddd6fe;
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .creative-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #7c3aed;
+            margin-bottom: 12px;
+        }
+        .creative-item { margin-bottom: 16px; }
+        .creative-item:last-child { margin-bottom: 0; }
+        .creative-item .ci-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .creative-item .ci-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ===== LEARNING CARD ===== */
+        .learning-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin: 16px 0;
+            box-shadow: var(--shadow);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ===== CLOSING ===== */
+        .closing {
+            text-align: center;
+            padding: 48px 24px 64px;
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+        }
+        .closing h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .closing p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .closing .stack-icons {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .closing .stack-icon {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .closing .links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        .closing .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .closing .links a:hover { text-decoration: underline; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .hero { padding: 60px 20px 44px; }
+            .solution-card { padding: 24px 20px; }
+            .pain-card { padding: 20px; }
+            .phone-frame { width: 220px; }
+            .metrics { grid-template-columns: 1fr 1fr; }
+            .preview-grid { grid-template-columns: 1fr; }
+            .creative-box { padding: 20px; }
+            .learning-card { padding: 16px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+    <div class="hero-inner">
+        <div class="hero-badge">Side Project — UX/UI Design</div>
+        <h1><span class="emoji">🇹🇼</span> Taiwan Travel Guidebook</h1>
+        <p>คู่มือเที่ยวไต้หวันแบบ Mobile-First — รวมแผนเที่ยว 6 วัน, Budget Tracker, เอกสาร ไว้ในเว็บเดียว แชร์ผ่าน URL ไม่ต้องลงแอป</p>
+        <a href="https://natpakans-stack.github.io/taiwan-guidebook/" class="hero-link">เปิดคู่มือเที่ยว</a>
+    </div>
+</header>
+
+<!-- ===== CONTENT ===== -->
+<article class="container">
+
+    <!-- ===== PAIN POINT ===== -->
+    <section class="section-intro">
+        <h2>Pain Point ที่เจอจริง</h2>
+        <p>วางแผนทริปกลุ่มไปไต้หวัน 6 วัน — ข้อมูลกระจัดกระจาย เข้าถึงยากตอนอยู่ต่างประเทศ</p>
+    </section>
+
+    <div class="pain-card">
+        <h3>วางแผนทริปกลุ่มคือความวุ่นวาย</h3>
+        <ul class="pain-list">
+            <li><strong>ข้อมูลกระจาย</strong> — สถานที่เที่ยว อยู่ใน Google Docs, ตั๋วเครื่องบินอยู่ใน email, ที่พักอยู่ใน Booking app, งบอยู่ใน Notes</li>
+            <li><strong>เปิดดูบนมือถือยาก</strong> — Google Docs ไม่ได้ออกแบบสำหรับ mobile, ต้อง zoom เข้า-ออก scroll หลายหน้า</li>
+            <li><strong>ภาษาไทยไม่พอ</strong> — ตอนผ่านด่าน immigration ต้องกรอกข้อมูลเป็นภาษาอังกฤษ (ชื่อโรงแรม ที่อยู่) หาไม่ทัน</li>
+            <li><strong>คุมงบไม่ได้</strong> — ไม่มีที่จดรายจ่ายรวม ไม่รู้ว่าใช้ไปเท่าไหร่แล้วเทียบกับแผน</li>
+            <li><strong>เอกสารหายาก</strong> — ตั๋ว voucher ประกัน กระจายอยู่หลาย app ตอนต้องการเปิดไม่ทัน</li>
+        </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== DESIGN THINKING ===== -->
+    <section class="section-intro">
+        <h2>Design Thinking Process</h2>
+        <p>จาก pain point สู่ solution ที่ใช้งานจริงในทริป</p>
+    </section>
+
+    <div class="dt-steps">
+        <div class="dt-step">
+            <div class="step-label">1. Empathize</div>
+            <div class="step-content">สังเกตตัวเองและเพื่อนร่วมทริป: ทุกครั้งที่วางแผนทริป ข้อมูลจะกระจายอยู่ใน LINE group, Google Docs, email, หลาย app — ตอนถึงสนามบินหรือด่าน immigration ต้องรีบเปิดหาข้อมูล กด scroll หาไม่ทัน โดยเฉพาะบนมือถือจอเล็ก เน็ตต่างประเทศก็ช้า</div>
+        </div>
+
+        <div class="dt-step">
+            <div class="step-label">2. Define</div>
+            <div class="step-content"><strong>Problem Statement:</strong> "นักเดินทางต้องการ (1) เข้าถึงแผนเที่ยวทั้งหมดจากที่เดียวบนมือถือ (2) สลับภาษาไทย-อังกฤษได้ทันทีสำหรับ immigration (3) ติดตามค่าใช้จ่ายเทียบกับงบ (4) เข้าถึงเอกสารสำคัญได้เร็ว — ทั้งหมดนี้ไม่ต้องลงแอป แค่เปิดลิงก์"</div>
+        </div>
+
+        <div class="dt-step orange">
+            <div class="step-label">3. Ideate</div>
+            <div class="step-content"><strong>Key Insight:</strong> "ไม่จำเป็นต้องสร้าง native app — แค่ HTML ธรรมดาก็พอ เปิดได้ทุกเครื่อง ไม่ต้องลงแอป แชร์ URL ให้เพื่อนร่วมทริปได้ทันที" ไอเดีย: สร้าง mobile-first web guidebook เป็น single-page HTML → ใช้ bottom nav สลับ Day 1-6 ได้เร็ว → เพิ่ม Budget Tracker แยกหน้า → เพิ่มหน้าเอกสารรวม → ทำ bilingual toggle (TH/EN)</div>
+        </div>
+
+        <div class="dt-step green">
+            <div class="step-label">4. Prototype & Test</div>
+            <div class="step-content">เริ่มจาก V1.0 แผนเที่ยว 5 วันแบบง่าย → ทดสอบเปิดบนมือถือ → พบว่า scroll ยาวมาก → เพิ่ม bottom nav + collapsible sections → ทุก version ทดสอบบนมือถือจริง → iterate ต่อเนื่อง 8 versions ในเวลา 2 สัปดาห์</div>
+        </div>
+
+        <div class="dt-step purple">
+            <div class="step-label">5. Iterate</div>
+            <div class="step-content">ทุก version เกิดจาก feedback จริง: "หาสถานที่ไม่เจอ" → เพิ่ม nav, "กรอก immigration ไม่ทัน" → เพิ่ม bilingual toggle, "ไม่รู้ใช้เงินไปเท่าไหร่" → เพิ่ม Budget Tracker, "หาเอกสารไม่เจอ" → เพิ่มหน้า Docs</div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== USER JOURNEY ===== -->
+    <section class="section-intro">
+        <h2>User Journey — เปิดลิงก์เดียว ได้ทุกอย่าง</h2>
+        <p>จากมุมมองผู้ใช้ ตั้งแต่เตรียมตัวก่อนเดินทาง จนถึงระหว่างทริป</p>
+    </section>
+
+    <div class="flow-diagram">
+        <div class="journey-flow">
+            <div class="journey-step">
+                <div class="journey-num">1</div>
+                <div class="journey-text">ได้รับ <strong>URL</strong> จากเพื่อนร่วมทริป → เปิดบนมือถือทันที <span class="page-tag guide">Guidebook</span></div>
+            </div>
+            <div class="journey-connector"></div>
+
+            <div class="journey-step">
+                <div class="journey-num">2</div>
+                <div class="journey-text">เลื่อน <strong>Bottom Nav</strong> เลือก Day 1-6 → ดูแผนแต่ละวัน สถานที่ เวลา ค่าใช้จ่าย</div>
+            </div>
+            <div class="journey-connector"></div>
+
+            <div class="journey-step">
+                <div class="journey-num green">3</div>
+                <div class="journey-text">ถึง <strong>สนามบิน</strong> → กด toggle เปลี่ยนภาษาเป็น EN → เห็นชื่อโรงแรม ที่อยู่ เป็นภาษาอังกฤษทันที</div>
+            </div>
+            <div class="journey-connector"></div>
+
+            <div class="journey-step">
+                <div class="journey-num orange">4</div>
+                <div class="journey-text">ระหว่างทริป → กด <strong>Budget</strong> → จดค่าใช้จ่ายแต่ละวัน เห็นยอดรวม <span class="page-tag budget">Budget</span></div>
+            </div>
+            <div class="journey-connector"></div>
+
+            <div class="journey-step">
+                <div class="journey-num purple">5</div>
+                <div class="journey-text">ต้องการเอกสาร → กด <strong>เอกสาร</strong> → เปิดตั๋ว ประกัน booking จาก Drive <span class="page-tag docs">Docs</span></div>
+            </div>
+            <div class="journey-connector"></div>
+
+            <div class="journey-step">
+                <div class="journey-num red">6</div>
+                <div class="journey-text">เพื่อนจดรายจ่ายที่เครื่องอื่น → <strong>Firebase Sync</strong> → ข้อมูล sync ข้ามเครื่องอัตโนมัติ</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== SOLUTION ===== -->
+    <section class="section-intro">
+        <h2>Solution — 3 หน้า ครบทุกอย่าง</h2>
+        <p>ออกแบบเป็น 3 หน้า HTML แยกตามหน้าที่ เชื่อมกันด้วย navigation</p>
+    </section>
+
+    <div class="solution-card">
+        <h3>📋 Guidebook — แผนเที่ยว 6 วัน</h3>
+        <div class="subtitle">index.html — single-page itinerary</div>
+        <div class="tags">
+            <span class="tag blue">Mobile-First</span>
+            <span class="tag blue">Bottom Nav</span>
+            <span class="tag green">TH/EN Toggle</span>
+            <span class="tag orange">Collapsible Sections</span>
+        </div>
+        <ul class="features">
+            <li><strong>6-day itinerary</strong> — Taipei (Day 1-3) → Kaohsiung (Day 4-6) + Bonus section</li>
+            <li><strong>Bottom nav</strong> — เลื่อนสลับ Day 1-6 ได้เร็วบนมือถือ</li>
+            <li><strong>Bilingual toggle (TH/EN)</strong> — สลับภาษาได้ทันทีสำหรับ immigration</li>
+            <li><strong>Collapsible sections</strong> — กดพับ/ขยาย ลด scroll</li>
+            <li><strong>Trip dates banner</strong> — วันลา สรุปสำหรับแชร์ทีม</li>
+        </ul>
+    </div>
+
+    <div class="solution-card">
+        <h3>💰 Budget Tracker — คุมงบแบบ Realtime</h3>
+        <div class="subtitle">budget.html — shared expense tracker</div>
+        <div class="tags">
+            <span class="tag blue">CRUD</span>
+            <span class="tag green">Firebase Sync</span>
+            <span class="tag orange">Fixed/Variable</span>
+            <span class="tag purple">Category Chips</span>
+        </div>
+        <ul class="features">
+            <li><strong>CRUD expenses</strong> — เพิ่ม/แก้ไข/ลบรายจ่ายแต่ละรายการ</li>
+            <li><strong>Overview table</strong> — แบ่ง Fixed/Variable costs เห็นภาพรวมงบ</li>
+            <li><strong>Category chips</strong> — กรองตามหมวด (อาหาร, ที่พัก, ตั๋ว, ช้อปปิ้ง)</li>
+            <li><strong>Firebase Realtime Sync</strong> — จดรายจ่ายจากเครื่องไหนก็ sync ข้ามเครื่องทันที</li>
+            <li><strong>localStorage fallback</strong> — ไม่มีเน็ตก็ใช้ได้ offline</li>
+        </ul>
+    </div>
+
+    <div class="solution-card">
+        <h3>📁 Documents Hub — เอกสารรวม</h3>
+        <div class="subtitle">docs.html — quick access to trip documents</div>
+        <div class="tags">
+            <span class="tag blue">Google Drive</span>
+            <span class="tag purple">Card-Based</span>
+            <span class="tag orange">Status Badge</span>
+        </div>
+        <ul class="features">
+            <li><strong>Featured Drive card</strong> — กดเปิด Google Drive folder ทั้งหมดได้ทันที</li>
+            <li><strong>Category cards</strong> — ตั๋วเครื่องบิน, ประกัน, ที่พัก, HSR/Klook แยกหมวด</li>
+            <li><strong>Status badges</strong> — เห็นสถานะเอกสาร (รอเอกสาร / พร้อม)</li>
+            <li><strong>External links</strong> — ทุกลิงก์เปิดใน tab ใหม่</li>
+        </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== UI PREVIEW ===== -->
+    <section class="section-intro">
+        <h2>UI Preview</h2>
+        <p>ตัวอย่างหน้าจอหลักทั้ง 3 หน้าบนมือถือ</p>
+    </section>
+
+    <div class="preview-grid">
+        <!-- Guidebook Preview -->
+        <div class="preview-item">
+            <h4>Guidebook</h4>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="phone-statusbar dark"><span>09:41</span></div>
+                    <div class="phone-content">
+                        <div style="text-align: center; font-size: 1.1rem; margin-bottom: 2px;">🇹🇼</div>
+                        <div style="text-align: center; font-size: 0.78rem; font-weight: 700; margin-bottom: 8px;">คู่มือเที่ยวไต้หวัน</div>
+                        <div class="mock-nav-row">
+                            <div class="mock-nav-pill active">DAY 1</div>
+                            <div class="mock-nav-pill">DAY 2</div>
+                            <div class="mock-nav-pill">DAY 3</div>
+                            <div class="mock-nav-pill">DAY 4</div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mc-title">Day 1 — Taipei City</div>
+                            <div class="mc-desc">สนามบิน Taoyuan → Taipei Main Station → Ximending</div>
+                            <div class="mc-time">08:00 - 21:00</div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mc-title">Jiufen Old Street</div>
+                            <div class="mc-desc">เดินเที่ยวถนนเก่า ชิมอาหาร ดูวิว</div>
+                            <div class="mc-time">14:00 - 17:00</div>
+                        </div>
+                        <div class="mock-bottom-nav">
+                            <div class="mock-bnav-item active"><div class="dot"></div>DAY 1</div>
+                            <div class="mock-bnav-item"><div class="dot"></div>DAY 2</div>
+                            <div class="mock-bnav-item"><div class="dot"></div>Docs</div>
+                            <div class="mock-bnav-item"><div class="dot"></div>Budget</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget Preview -->
+        <div class="preview-item">
+            <h4>Budget Tracker</h4>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="phone-statusbar blue"><span>09:41</span></div>
+                    <div class="phone-content">
+                        <div style="text-align: center; font-size: 0.78rem; font-weight: 700; margin-bottom: 10px;">💰 Budget Tracker</div>
+                        <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+                            <div style="flex: 1; background: #eff6ff; border-radius: 8px; padding: 8px; text-align: center;">
+                                <div style="font-size: 0.55rem; color: #64748b;">แผน</div>
+                                <div style="font-size: 0.75rem; font-weight: 700; color: #1e40af;">฿45,100</div>
+                            </div>
+                            <div style="flex: 1; background: #fef2f2; border-radius: 8px; padding: 8px; text-align: center;">
+                                <div style="font-size: 0.55rem; color: #64748b;">ใช้จริง</div>
+                                <div style="font-size: 0.75rem; font-weight: 700; color: #dc2626;">฿12,450</div>
+                            </div>
+                        </div>
+                        <div class="mock-nav-row">
+                            <div class="mock-nav-pill active" style="background: #dcfce7; color: #166534;">ทั้งหมด</div>
+                            <div class="mock-nav-pill">อาหาร</div>
+                            <div class="mock-nav-pill">ที่พัก</div>
+                            <div class="mock-nav-pill">ตั๋ว</div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mc-title">MRT Day Pass</div>
+                            <div class="mc-desc">ตั๋ว MRT รายวัน Taipei</div>
+                            <div class="mc-time">฿540</div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mc-title">Din Tai Fung</div>
+                            <div class="mc-desc">ข้าวมันไก่ + ซาลาเปา</div>
+                            <div class="mc-time">฿380</div>
+                        </div>
+                        <div class="mock-bottom-nav">
+                            <div class="mock-bnav-item"><div class="dot"></div>DAY 1</div>
+                            <div class="mock-bnav-item"><div class="dot"></div>DAY 2</div>
+                            <div class="mock-bnav-item"><div class="dot"></div>Docs</div>
+                            <div class="mock-bnav-item active"><div class="dot"></div>Budget</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Docs Preview -->
+        <div class="preview-item">
+            <h4>Documents Hub</h4>
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="phone-statusbar" style="background: #0f3460;"><span>09:41</span></div>
+                    <div class="phone-content">
+                        <div style="text-align: center; font-size: 0.78rem; font-weight: 700; margin-bottom: 10px;">📁 เอกสารสำคัญ</div>
+                        <div style="background: #2A6FDB; color: white; border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                            <div style="width: 28px; height: 28px; background: rgba(255,255,255,0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">📂</div>
+                            <div>
+                                <div style="font-size: 0.7rem; font-weight: 700;">Google Drive ทั้งหมด</div>
+                                <div style="font-size: 0.55rem; opacity: 0.8;">เปิด folder รวมเอกสาร</div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                            <div class="mock-card" style="margin: 0;">
+                                <div style="font-size: 0.65rem;">✈️</div>
+                                <div class="mc-title" style="font-size: 0.62rem;">ตั๋วเครื่องบิน</div>
+                                <div style="font-size: 0.5rem; color: #f59e0b; font-weight: 600;">รอเอกสาร</div>
+                            </div>
+                            <div class="mock-card" style="margin: 0;">
+                                <div style="font-size: 0.65rem;">🛡️</div>
+                                <div class="mc-title" style="font-size: 0.62rem;">ประกันเดินทาง</div>
+                                <div style="font-size: 0.5rem; color: #f59e0b; font-weight: 600;">รอเอกสาร</div>
+                            </div>
+                            <div class="mock-card" style="margin: 0;">
+                                <div style="font-size: 0.65rem;">🏨</div>
+                                <div class="mc-title" style="font-size: 0.62rem;">Booking ที่พัก</div>
+                                <div style="font-size: 0.5rem; color: #f59e0b; font-weight: 600;">รอเอกสาร</div>
+                            </div>
+                            <div class="mock-card" style="margin: 0;">
+                                <div style="font-size: 0.65rem;">🚄</div>
+                                <div class="mc-title" style="font-size: 0.62rem;">ตั๋ว HSR / Klook</div>
+                                <div style="font-size: 0.5rem; color: #f59e0b; font-weight: 600;">รอเอกสาร</div>
+                            </div>
+                        </div>
+                        <div class="mock-bottom-nav">
+                            <div class="mock-bnav-item"><div class="dot"></div>DAY 1</div>
+                            <div class="mock-bnav-item"><div class="dot"></div>DAY 2</div>
+                            <div class="mock-bnav-item active"><div class="dot"></div>Docs</div>
+                            <div class="mock-bnav-item"><div class="dot"></div>Budget</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== ARCHITECTURE ===== -->
+    <section class="section-intro">
+        <h2>Technical Architecture</h2>
+        <p>โครงสร้างเทคนิค — เรียบง่ายแต่ครบ</p>
+    </section>
+
+    <div class="flow-section">
+        <h4>System Overview</h4>
+        <div class="arch-flow">
+            <div class="node highlight">HTML / CSS / JS</div>
+            <div class="arrow">→</div>
+            <div class="node">GitHub Pages</div>
+            <div class="arrow">→</div>
+            <div class="node">Firebase Realtime DB</div>
+            <div class="arrow">→</div>
+            <div class="node">Google Drive</div>
+        </div>
+    </div>
+
+    <div class="solution-card">
+        <h3>🏗️ Stack & Design Decisions</h3>
+        <div class="tags">
+            <span class="tag blue">Vanilla HTML/CSS/JS</span>
+            <span class="tag blue">GitHub Pages</span>
+            <span class="tag green">Firebase</span>
+            <span class="tag orange">localStorage</span>
+            <span class="tag purple">Google Drive</span>
+        </div>
+        <ul class="features">
+            <li><strong>Pure HTML — ไม่ใช้ framework</strong> — เปิดไว load เร็ว ไม่มี build step ไม่ต้องติดตั้ง</li>
+            <li><strong>GitHub Pages hosting</strong> — deploy ฟรี push แล้ว live ทันที</li>
+            <li><strong>Firebase Realtime Database</strong> — sync ข้อมูล budget ข้ามเครื่อง real-time</li>
+            <li><strong>localStorage fallback</strong> — ถ้าไม่มีเน็ตก็ใช้ offline ได้</li>
+            <li><strong>CSS-only bilingual toggle</strong> — ใช้ class .lang-th/.lang-en ซ่อน/แสดง span ไม่ต้อง re-render</li>
+            <li><strong>Responsive bottom nav</strong> — scroll ได้แนวนอน รองรับ Day 1-6 + Docs + Budget</li>
+        </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== VERSION HISTORY ===== -->
+    <section class="section-intro">
+        <h2>Iterate — 8 Versions ใน 2 สัปดาห์</h2>
+        <p>ทุก version เกิดจาก feedback จริงระหว่างเตรียมทริป</p>
+    </section>
+
+    <div class="version-timeline">
+        <div class="version-item">
+            <div class="version-badge v-blue">V1.0</div>
+            <div class="version-desc">เริ่มจาก <strong>แผนเที่ยว 5 วัน</strong> แบบ single-page ธรรมดา — Taipei → Sandiaoling → Kaohsiung</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-blue">V1.1</div>
+            <div class="version-desc">ขยายเป็น <strong>6 วัน</strong> — เพิ่ม Yangmingshan (Day 2) & Wulai (Day 3) ย้าย Sandiaoling ไป Bonus</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-blue">V1.2</div>
+            <div class="version-desc">เพิ่ม <strong>trip dates + leave summary</strong> — สำหรับแชร์ให้ทีมรู้วันลา</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-blue">V1.3</div>
+            <div class="version-desc">ปรับ <strong>Day 3</strong> — merge Sandiaoling เช้า + Wulai บ่ายรวมวันเดียว</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-green">V1.4</div>
+            <div class="version-desc"><strong>Horizontal scroll nav</strong> + สร้าง <strong>budget.html</strong> แยกหน้า — เพิ่ม Budget Tracker</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-orange">V1.5</div>
+            <div class="version-desc"><strong>Bilingual toggle (TH/EN)</strong> — 300+ bilingual spans, localStorage persist — สำหรับ immigration</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-orange">V1.6</div>
+            <div class="version-desc"><strong>Budget overview table</strong> — Fixed/Variable breakdown, category chips, auto-fill จากฟอร์ม</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-purple">V1.7</div>
+            <div class="version-desc"><strong>Firebase Realtime Sync</strong> — cross-device data sharing, sync badge UI, localStorage fallback</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-purple">V1.8</div>
+            <div class="version-desc"><strong>Docs page</strong> — หน้าเอกสารรวม card-based, Google Drive integration, nav ครบทุกหน้า</div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== CREATIVE PROBLEM SOLVING ===== -->
+    <section class="section-intro">
+        <h2>Creative Problem Solving</h2>
+        <p>ปัญหาที่เจอระหว่างทำ และวิธีแก้ที่คิดขึ้นมา</p>
+    </section>
+
+    <div class="creative-box">
+        <h4>🎯 Design Decisions ที่น่าสนใจ</h4>
+
+        <div class="creative-item">
+            <div class="ci-title">CSS-only Language Toggle (ไม่ต้อง re-render)</div>
+            <div class="ci-desc">แทนที่จะสร้าง 2 หน้าแยก (TH/EN) ก็ใช้ CSS class toggle — ฝัง &lt;span class="th"&gt; และ &lt;span class="en"&gt; คู่กันทุกจุด แล้วใช้ .lang-th .en { display: none } สลับ — กดเปลี่ยนภาษาได้ทันทีไม่ต้อง reload หน้า</div>
+        </div>
+
+        <div class="creative-item">
+            <div class="ci-title">Bottom Nav แบบ Horizontal Scroll</div>
+            <div class="ci-desc">Day 1-6 + Bonus + Docs + Budget = 9 items บนจอมือถือแสดงไม่หมด — ใช้ overflow-x: auto ให้ scroll แนวนอนได้ ซ่อน scrollbar + IntersectionObserver highlight active section อัตโนมัติ</div>
+        </div>
+
+        <div class="creative-item">
+            <div class="ci-title">Firebase + localStorage Dual Strategy</div>
+            <div class="ci-desc">Budget Tracker ต้องทำงาน offline ด้วย (เน็ตต่างประเทศอาจช้า) — ใช้ Firebase เป็น primary, localStorage เป็น fallback ถ้า Firebase ไม่ตอบ auto-switch ไปใช้ local พร้อมแสดง sync badge ให้รู้สถานะ</div>
+        </div>
+    </div>
+
+    <div class="insight-box">
+        <h4>💡 Key Insights ระหว่างทำ</h4>
+        <ul>
+            <li><strong>Mobile-First ไม่ใช่แค่ responsive:</strong> ต้องคิดตั้งแต่ต้นว่าจะใช้บนมือถือ — thumb zone, touch targets, font size ที่อ่านได้กลางแดด</li>
+            <li><strong>Single-page ≠ ดีเสมอ:</strong> guidebook เหมาะกับ single-page (scroll) แต่ budget tracker ต้องแยกหน้า เพราะมี state ที่ซับซ้อนกว่า</li>
+            <li><strong>ภาษาเดียวไม่พอ:</strong> ตอนผ่าน immigration ต้องกรอกข้อมูลเป็น EN ทันที — bilingual toggle ช่วยลด friction ได้มาก</li>
+            <li><strong>No-framework = เร็วกว่า:</strong> Pure HTML load เร็วมากบนเน็ต 3G ต่างประเทศ ไม่มี JS bundle ที่ต้องรอ download</li>
+        </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== RESULTS ===== -->
+    <section class="section-intro">
+        <h2>Results</h2>
+        <p>ผลลัพธ์จากการ iterate 8 versions</p>
+    </section>
+
+    <div class="metrics">
+        <div class="metric-card">
+            <div class="num">8</div>
+            <div class="label">Versions (2 สัปดาห์)</div>
+        </div>
+        <div class="metric-card">
+            <div class="num green">3</div>
+            <div class="label">Pages (Guide + Budget + Docs)</div>
+        </div>
+        <div class="metric-card">
+            <div class="num orange">6</div>
+            <div class="label">Days Itinerary</div>
+        </div>
+        <div class="metric-card">
+            <div class="num purple">2</div>
+            <div class="label">Languages (TH / EN)</div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== LEARNINGS ===== -->
+    <section class="section-intro">
+        <h2>Learnings</h2>
+        <p>สิ่งที่ได้เรียนรู้จากโปรเจกต์นี้</p>
+    </section>
+
+    <div class="learning-card">
+        <strong>Iterate เร็ว ดีกว่า perfect ตั้งแต่แรก</strong> — เริ่มจาก V1.0 ง่ายๆ แล้ว iterate ตาม feedback จริง ดีกว่าวางแผนใหญ่ตั้งแต่ต้น ทุก version เพิ่ม 1 feature สำคัญ ไม่ทำทุกอย่างพร้อมกัน
+    </div>
+
+    <div class="learning-card">
+        <strong>Context กำหนด Design</strong> — เว็บนี้ใช้ตอนเดินทาง: จอเล็ก กลางแดด เน็ตช้า → ต้องโหลดเร็ว ตัวหนังสือใหญ่ กดง่าย contrast สูง ทุก decision เกิดจาก context ของผู้ใช้
+    </div>
+
+    <div class="learning-card">
+        <strong>Simple tech = Reliable tech</strong> — Pure HTML + CSS + JS ไม่ต้อง build ไม่ต้อง deploy pipeline ไม่ต้อง package manager Push แล้ว live ทันที มี error ก็แก้ได้เร็ว เหมาะกับ side project ที่ต้องการความเร็วและความเรียบง่าย
+    </div>
+
+    <div class="learning-card">
+        <strong>UX Copy สำคัญกว่าที่คิด</strong> — Button ที่เขียนว่า "เงิน" บน nav ดีกว่า "Budget Tracker" เพราะพื้นที่จำกัดบนมือถือ ทุก label ต้อง scan ได้ภายใน 1 วินาที
+    </div>
+
+    <div class="learning-card">
+        <strong>Design for sharing</strong> — URL เดียว แชร์ทาง LINE ให้เพื่อนร่วมทริปเปิดได้ทันที ไม่ต้องลงแอป ไม่ต้อง login — ลด barrier ให้ต่ำที่สุด คือสิ่งที่ทำให้คนใช้งานจริง
+    </div>
+
+</article>
+
+<!-- ===== CLOSING ===== -->
+<footer class="closing">
+    <h2>🇹🇼 Built for a real trip</h2>
+    <p>โปรเจกต์นี้สร้างขึ้นเพื่อใช้งานจริงในทริปไต้หวัน 1-6 พฤษภาคม 2025 — ทุก feature เกิดจาก pain point จริง แก้ปัญหาจริง ใช้งานจริง</p>
+    <div class="stack-icons">
+        <span class="stack-icon">HTML</span>
+        <span class="stack-icon">CSS</span>
+        <span class="stack-icon">JavaScript</span>
+        <span class="stack-icon">Firebase</span>
+        <span class="stack-icon">GitHub Pages</span>
+        <span class="stack-icon">Google Drive</span>
+    </div>
+    <div class="links">
+        <a href="https://natpakans-stack.github.io/taiwan-guidebook/" target="_blank">Live Demo</a>
+        <a href="https://github.com/natpakans-stack/taiwan-guidebook" target="_blank">GitHub Repo</a>
+    </div>
+    <p style="margin-top: 20px; font-size: 0.8rem; color: #64748b;">Taiwan Travel Guidebook V1.8 — Design Thinking Portfolio</p>
+</footer>
+
+</body>
+</html>
