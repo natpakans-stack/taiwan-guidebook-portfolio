@@ -851,19 +851,16 @@
         /* ===== SITE FOOTER ===== */
         .site-footer {
             text-align: center;
-            padding: 48px 24px 40px;
+            padding: 48px 24px 0;
             background: var(--bg);
-        }
-        .site-footer img {
-            width: 160px;
-            height: auto;
-            margin-bottom: 16px;
+            overflow: hidden;
         }
         .site-footer-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 8px 24px;
+            margin-bottom: 32px;
         }
         .site-footer-links a {
             color: #9b8ec4;
@@ -875,6 +872,17 @@
         .site-footer-links a:hover {
             color: #7c3aed;
             text-decoration: underline;
+        }
+        .mascot-half {
+            width: 180px;
+            height: 120px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .mascot-half img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -1464,13 +1472,14 @@
     </div>
 </div>
 
-<!-- ===== SITE FOOTER ===== -->
 <footer class="site-footer">
-    <img src="https://natpakans-stack.github.io/talk-to-figma-mcp/assets/aw-mascot.avif" alt="Aw mascot">
-    <div class="site-footer-links">
+    <nav class="site-footer-links">
         <a href="https://natpakans-stack.github.io/line-messaging-portfolio">line-messaging-portfolio</a>
         <a href="https://natpakans-stack.github.io/parking-reminder-portfolio">parking-reminder-portfolio</a>
         <a href="https://natpakans-stack.github.io/carpark_live_dashboard">carpark_live_dashboard</a>
+    </nav>
+    <div class="mascot-half">
+        <img src="https://natpakans-stack.github.io/talk-to-figma-mcp/assets/aw-mascot.avif" alt="Aw mascot">
     </div>
 </footer>
 
