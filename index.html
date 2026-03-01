@@ -1358,31 +1358,50 @@
 
     <hr class="divider">
 
-    <!-- ===== LIVE EVENT ===== -->
+    <!-- ===== LIVE EVENT INDICATOR ===== -->
     <section class="section-intro">
-        <h2>Live Event — ใช้งานจริงในทริป</h2>
-        <p>ไม่ใช่แค่โปรเจกต์ฝึกมือ — ถูกใช้งานจริงตลอดทริป 6 วัน</p>
+        <h2>Live Event Indicator</h2>
+        <p>ระหว่างทริป (1-6 พ.ค.) ระบบจะ highlight อัตโนมัติว่า "ตอนนี้ควรอยู่ที่ไหน" ตามวันและเวลาจริง</p>
     </section>
 
-    <div class="live-event">
-        <div class="le-badge">REAL TRIP — USED DAILY</div>
-        <h3>🇹🇼 Taiwan Trip 2025</h3>
-        <p>คู่มือนี้ถูกเปิดใช้งานจริงทุกวันระหว่างเดินทางไต้หวัน ตั้งแต่เช็คแผนเที่ยวตอนเช้า กรอกข้อมูล immigration ที่สนามบิน จดค่าใช้จ่ายระหว่างวัน ไปจนถึงเปิดเอกสาร voucher ที่เคาน์เตอร์</p>
-        <div class="le-details">
-            <div class="le-tag">📅 1 – 6 พฤษภาคม 2025</div>
-            <div class="le-tag">📍 Taipei → Kaohsiung</div>
-            <div class="le-tag">👥 Group Trip</div>
-            <div class="le-tag">📱 ใช้บนมือถือตลอดทริป</div>
+    <div class="solution-card">
+        <h3>📍 แนวคิด — "You Are Here"</h3>
+        <div class="subtitle">auto-highlight กิจกรรมปัจจุบันตามเวลาจริง ไม่ต้อง scroll หาเอง</div>
+        <div class="tags">
+            <span class="tag blue">Date-Aware</span>
+            <span class="tag green">Time-Based</span>
+            <span class="tag orange">Auto-Scroll</span>
+            <span class="tag purple">Visual Indicator</span>
+        </div>
+        <ul class="features">
+            <li><strong>เปิดหน้า Guidebook → ระบบเช็ควันที่ปัจจุบัน</strong> → auto-navigate ไป Day ที่ตรงกับวันนี้</li>
+            <li><strong>เช็คเวลาปัจจุบัน → highlight กิจกรรมที่ควรทำตอนนี้</strong> เช่น ถ้า 14:00 → highlight "Jiufen Old Street (14:00-17:00)"</li>
+            <li><strong>กิจกรรมที่ผ่านไปแล้ว</strong> แสดงเป็นสีจาง (muted) เพื่อแยกจากกิจกรรมที่ยังไม่ถึง</li>
+            <li><strong>Badge "NOW"</strong> ติดข้างกิจกรรมปัจจุบัน → scan ได้ทันที ไม่ต้องเทียบเวลาเอง</li>
+        </ul>
+    </div>
+
+    <div class="creative-box">
+        <h4>🎯 ทำไมถึงสำคัญ?</h4>
+
+        <div class="creative-item">
+            <div class="ci-title">ลดเวลาหาข้อมูลจาก 10 วินาที → 0 วินาที</div>
+            <div class="ci-desc">ปกติเปิด guidebook ต้อง scroll หาว่า "ตอนนี้ถึงไหนแล้ว" — ด้วย Live Indicator ระบบพาไปเลย ไม่ต้องคิด ไม่ต้องหา</div>
+        </div>
+
+        <div class="creative-item">
+            <div class="ci-title">Context-Aware UX</div>
+            <div class="ci-desc">guidebook ไม่ใช่แค่เอกสาร static — มันรู้ว่า "วันนี้วันไหน" และ "ตอนนี้กี่โมง" แล้วแสดงข้อมูลที่เกี่ยวข้องที่สุดก่อน</div>
         </div>
     </div>
 
     <div class="insight-box">
-        <h4>📊 Real Usage Feedback</h4>
+        <h4>💡 Implementation Concept</h4>
         <ul>
-            <li><strong>Bilingual toggle ช่วยได้จริง:</strong> ตอนกรอก arrival card กดสลับ EN เห็นชื่อโรงแรม+ที่อยู่ทันที ไม่ต้องเปิดอีก app</li>
-            <li><strong>Bottom nav เร็วกว่า scroll:</strong> เช้าตื่นมากด Day 3 → เห็นแผนทั้งวันภายใน 2 วินาที</li>
-            <li><strong>Firebase sync ทำงานได้จริง:</strong> เพื่อนจดค่ารถไฟ เราจดค่าอาหาร → ข้อมูลรวมกันอัตโนมัติ</li>
-            <li><strong>Drive docs ช่วยตอนฉุกเฉิน:</strong> เปิด voucher ที่เคาน์เตอร์ HSR ได้ทันทีจากหน้าเอกสาร</li>
+            <li><strong>Date mapping:</strong> วันที่ 1 พ.ค. = Day 1, 2 พ.ค. = Day 2, ... 6 พ.ค. = Day 6</li>
+            <li><strong>Time matching:</strong> แต่ละกิจกรรมมี data-start / data-end → เทียบกับเวลาปัจจุบัน</li>
+            <li><strong>Visual states:</strong> Past (opacity 0.5) → Current (highlight border + NOW badge) → Upcoming (ปกติ)</li>
+            <li><strong>Auto-scroll:</strong> เปิดหน้าครั้งแรก → scrollIntoView() ไปกิจกรรมปัจจุบันทันที</li>
         </ul>
     </div>
 
