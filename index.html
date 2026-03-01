@@ -123,9 +123,8 @@
         .container {
             max-width: var(--max-w);
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 48px 24px 80px;
         }
-        article { padding: 48px 0 80px; }
 
         /* ===== SECTION INTRO ===== */
         .section-intro { margin: 48px 0 24px; }
@@ -619,6 +618,187 @@
             line-height: 1.7;
         }
 
+        /* ===== LIVE EVENT BANNER ===== */
+        .live-event {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin: 24px 0;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .live-event::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(231,76,94,0.15) 0%, transparent 70%);
+        }
+        .live-event .le-badge {
+            display: inline-block;
+            background: rgba(231,76,94,0.3);
+            color: #fca5a5;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .live-event h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .live-event p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            line-height: 1.7;
+            position: relative;
+            max-width: 560px;
+        }
+        .live-event .le-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+            position: relative;
+        }
+        .live-event .le-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ===== BROWSER PREVIEW ===== */
+        .browser-preview {
+            margin: 32px 0;
+        }
+        .browser-frame {
+            background: #1e293b;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .browser-titlebar {
+            background: #334155;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .browser-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .browser-dots span:nth-child(1) { background: #ef4444; }
+        .browser-dots span:nth-child(2) { background: #f59e0b; }
+        .browser-dots span:nth-child(3) { background: #10b981; }
+        .browser-urlbar {
+            flex: 1;
+            background: #1e293b;
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            color: #94a3b8;
+            font-family: monospace;
+        }
+        .browser-content {
+            background: #f6f7fa;
+            padding: 0;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+        .browser-hero-mock {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+            color: white;
+            padding: 28px 24px 20px;
+            text-align: center;
+        }
+        .browser-hero-mock .bhm-flag { font-size: 1.6rem; margin-bottom: 4px; }
+        .browser-hero-mock h4 { font-size: 0.9rem; font-weight: 700; }
+        .browser-hero-mock p { font-size: 0.65rem; opacity: 0.7; margin-top: 4px; }
+        .browser-hero-mock::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background: linear-gradient(90deg, #E74C5E, #f59e0b, #10b981, #3b82f6);
+            margin-top: 20px;
+            margin-left: -24px;
+            margin-right: -24px;
+        }
+        .browser-body-mock {
+            padding: 16px 24px 20px;
+            flex: 1;
+        }
+        .browser-body-mock .bbm-section {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .browser-body-mock .bbm-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+        }
+        .browser-body-mock .bbm-card-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .browser-body-mock .bbm-card-desc {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        .browser-body-mock .bbm-card-meta {
+            font-size: 0.55rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        .browser-nav-mock {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 8px 16px 6px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .browser-nav-mock .bnm-item {
+            text-align: center;
+            font-size: 0.48rem;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+        .browser-nav-mock .bnm-item.active { color: var(--accent); }
+        .browser-nav-mock .bnm-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            margin: 0 auto 2px;
+        }
+        .browser-nav-mock .bnm-item.active .bnm-dot { background: var(--accent); }
+
         /* ===== CLOSING ===== */
         .closing {
             text-align: center;
@@ -678,6 +858,9 @@
             .preview-grid { grid-template-columns: 1fr; }
             .creative-box { padding: 20px; }
             .learning-card { padding: 16px 20px; }
+            .live-event { padding: 24px 20px; }
+            .live-event h3 { font-size: 1.05rem; }
+            .browser-body-mock { padding: 12px 16px 16px; }
         }
     </style>
 </head>
@@ -1171,6 +1354,90 @@
 
     <div class="learning-card">
         <strong>Design for sharing</strong> — URL เดียว แชร์ทาง LINE ให้เพื่อนร่วมทริปเปิดได้ทันที ไม่ต้องลงแอป ไม่ต้อง login — ลด barrier ให้ต่ำที่สุด คือสิ่งที่ทำให้คนใช้งานจริง
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== LIVE EVENT ===== -->
+    <section class="section-intro">
+        <h2>Live Event — ใช้งานจริงในทริป</h2>
+        <p>ไม่ใช่แค่โปรเจกต์ฝึกมือ — ถูกใช้งานจริงตลอดทริป 6 วัน</p>
+    </section>
+
+    <div class="live-event">
+        <div class="le-badge">REAL TRIP — USED DAILY</div>
+        <h3>🇹🇼 Taiwan Trip 2025</h3>
+        <p>คู่มือนี้ถูกเปิดใช้งานจริงทุกวันระหว่างเดินทางไต้หวัน ตั้งแต่เช็คแผนเที่ยวตอนเช้า กรอกข้อมูล immigration ที่สนามบิน จดค่าใช้จ่ายระหว่างวัน ไปจนถึงเปิดเอกสาร voucher ที่เคาน์เตอร์</p>
+        <div class="le-details">
+            <div class="le-tag">📅 1 – 6 พฤษภาคม 2025</div>
+            <div class="le-tag">📍 Taipei → Kaohsiung</div>
+            <div class="le-tag">👥 Group Trip</div>
+            <div class="le-tag">📱 ใช้บนมือถือตลอดทริป</div>
+        </div>
+    </div>
+
+    <div class="insight-box">
+        <h4>📊 Real Usage Feedback</h4>
+        <ul>
+            <li><strong>Bilingual toggle ช่วยได้จริง:</strong> ตอนกรอก arrival card กดสลับ EN เห็นชื่อโรงแรม+ที่อยู่ทันที ไม่ต้องเปิดอีก app</li>
+            <li><strong>Bottom nav เร็วกว่า scroll:</strong> เช้าตื่นมากด Day 3 → เห็นแผนทั้งวันภายใน 2 วินาที</li>
+            <li><strong>Firebase sync ทำงานได้จริง:</strong> เพื่อนจดค่ารถไฟ เราจดค่าอาหาร → ข้อมูลรวมกันอัตโนมัติ</li>
+            <li><strong>Drive docs ช่วยตอนฉุกเฉิน:</strong> เปิด voucher ที่เคาน์เตอร์ HSR ได้ทันทีจากหน้าเอกสาร</li>
+        </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== LIVE PREVIEW ===== -->
+    <section class="section-intro">
+        <h2>Live Preview</h2>
+        <p>ตัวอย่างหน้าจอจริงของ Guidebook</p>
+    </section>
+
+    <div class="browser-preview">
+        <div class="browser-frame">
+            <div class="browser-titlebar">
+                <div class="browser-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="browser-urlbar">natpakans-stack.github.io/taiwan-guidebook/</div>
+            </div>
+            <div class="browser-content">
+                <div class="browser-hero-mock">
+                    <div class="bhm-flag">🇹🇼</div>
+                    <h4>คู่มือเที่ยวไต้หวัน</h4>
+                    <p>Taiwan Travel Guidebook V1.8</p>
+                </div>
+                <div class="browser-body-mock">
+                    <div class="bbm-section">Day 1 — Taipei เมืองหลวงแห่งความอร่อย</div>
+                    <div class="bbm-card">
+                        <div class="bbm-card-title">✈️ สนามบิน Taoyuan → Taipei Main Station</div>
+                        <div class="bbm-card-desc">Airport MRT → Taipei Main Station (35 นาที, ฿160)</div>
+                        <div class="bbm-card-meta">08:00 - 10:00</div>
+                    </div>
+                    <div class="bbm-card">
+                        <div class="bbm-card-title">🏯 Jiufen Old Street + Shifen</div>
+                        <div class="bbm-card-desc">เดินเที่ยวถนนเก่า ชิมชาบัวลอย ปล่อยโคมลอย</div>
+                        <div class="bbm-card-meta">10:30 - 17:00</div>
+                    </div>
+                    <div class="bbm-card">
+                        <div class="bbm-card-title">🌃 Ximending Night Market</div>
+                        <div class="bbm-card-desc">ช้อปปิ้ง + street food ย่านวัยรุ่น Taipei</div>
+                        <div class="bbm-card-meta">18:00 - 21:00</div>
+                    </div>
+                </div>
+                <div class="browser-nav-mock">
+                    <div class="bnm-item active"><div class="bnm-dot"></div>DAY 1</div>
+                    <div class="bnm-item"><div class="bnm-dot"></div>DAY 2</div>
+                    <div class="bnm-item"><div class="bnm-dot"></div>DAY 3</div>
+                    <div class="bnm-item"><div class="bnm-dot"></div>DAY 4</div>
+                    <div class="bnm-item"><div class="bnm-dot"></div>DAY 5</div>
+                    <div class="bnm-item"><div class="bnm-dot"></div>DAY 6</div>
+                    <div class="bnm-item"><div class="bnm-dot"></div>Docs</div>
+                    <div class="bnm-item"><div class="bnm-dot"></div>Budget</div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </article>
