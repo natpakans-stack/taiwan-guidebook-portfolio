@@ -1256,40 +1256,40 @@
 
     <div class="version-timeline">
         <div class="version-item">
-            <div class="version-badge v-blue">V1.0</div>
-            <div class="version-desc">เริ่มจาก <strong>แผนเที่ยว 5 วัน</strong> แบบ single-page ธรรมดา — Taipei → Sandiaoling → Kaohsiung</div>
-        </div>
-        <div class="version-item">
-            <div class="version-badge v-blue">V1.1</div>
-            <div class="version-desc">ขยายเป็น <strong>6 วัน</strong> — เพิ่ม Yangmingshan (Day 2) & Wulai (Day 3) ย้าย Sandiaoling ไป Bonus</div>
-        </div>
-        <div class="version-item">
-            <div class="version-badge v-blue">V1.2</div>
-            <div class="version-desc">เพิ่ม <strong>trip dates + leave summary</strong> — สำหรับแชร์ให้ทีมรู้วันลา</div>
-        </div>
-        <div class="version-item">
-            <div class="version-badge v-blue">V1.3</div>
-            <div class="version-desc">ปรับ <strong>Day 3</strong> — merge Sandiaoling เช้า + Wulai บ่ายรวมวันเดียว</div>
-        </div>
-        <div class="version-item">
-            <div class="version-badge v-green">V1.4</div>
-            <div class="version-desc"><strong>Horizontal scroll nav</strong> + สร้าง <strong>budget.html</strong> แยกหน้า — เพิ่ม Budget Tracker</div>
-        </div>
-        <div class="version-item">
-            <div class="version-badge v-orange">V1.5</div>
-            <div class="version-desc"><strong>Bilingual toggle (TH/EN)</strong> — 300+ bilingual spans, localStorage persist — สำหรับ immigration</div>
-        </div>
-        <div class="version-item">
-            <div class="version-badge v-orange">V1.6</div>
-            <div class="version-desc"><strong>Budget overview table</strong> — Fixed/Variable breakdown, category chips, auto-fill จากฟอร์ม</div>
+            <div class="version-badge v-purple">V1.8</div>
+            <div class="version-desc"><strong>Docs page</strong> — หน้าเอกสารรวม card-based, Google Drive integration, nav ครบทุกหน้า</div>
         </div>
         <div class="version-item">
             <div class="version-badge v-purple">V1.7</div>
             <div class="version-desc"><strong>Firebase Realtime Sync</strong> — cross-device data sharing, sync badge UI, localStorage fallback</div>
         </div>
         <div class="version-item">
-            <div class="version-badge v-purple">V1.8</div>
-            <div class="version-desc"><strong>Docs page</strong> — หน้าเอกสารรวม card-based, Google Drive integration, nav ครบทุกหน้า</div>
+            <div class="version-badge v-orange">V1.6</div>
+            <div class="version-desc"><strong>Budget overview table</strong> — Fixed/Variable breakdown, category chips, auto-fill จากฟอร์ม</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-orange">V1.5</div>
+            <div class="version-desc"><strong>Bilingual toggle (TH/EN)</strong> — 300+ bilingual spans, localStorage persist — สำหรับ immigration</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-green">V1.4</div>
+            <div class="version-desc"><strong>Horizontal scroll nav</strong> + สร้าง <strong>budget.html</strong> แยกหน้า — เพิ่ม Budget Tracker</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-blue">V1.3</div>
+            <div class="version-desc">ปรับ <strong>Day 3</strong> — merge Sandiaoling เช้า + Wulai บ่ายรวมวันเดียว</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-blue">V1.2</div>
+            <div class="version-desc">เพิ่ม <strong>trip dates + leave summary</strong> — สำหรับแชร์ให้ทีมรู้วันลา</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-blue">V1.1</div>
+            <div class="version-desc">ขยายเป็น <strong>6 วัน</strong> — เพิ่ม Yangmingshan (Day 2) & Wulai (Day 3) ย้าย Sandiaoling ไป Bonus</div>
+        </div>
+        <div class="version-item">
+            <div class="version-badge v-blue">V1.0</div>
+            <div class="version-desc">เริ่มจาก <strong>แผนเที่ยว 5 วัน</strong> แบบ single-page ธรรมดา — Taipei → Sandiaoling → Kaohsiung</div>
         </div>
     </div>
 
@@ -1317,6 +1317,11 @@
         <div class="creative-item">
             <div class="ci-title">Firebase + localStorage Dual Strategy</div>
             <div class="ci-desc">Budget Tracker ต้องทำงาน offline ด้วย (เน็ตต่างประเทศอาจช้า) — ใช้ Firebase เป็น primary, localStorage เป็น fallback ถ้า Firebase ไม่ตอบ auto-switch ไปใช้ local พร้อมแสดง sync badge ให้รู้สถานะ</div>
+        </div>
+
+        <div class="creative-item">
+            <div class="ci-title">Live Event Indicator — "You Are Here"</div>
+            <div class="ci-desc">ระหว่างทริป (1-6 พ.ค.) ระบบเช็ควันที่+เวลาปัจจุบัน → auto-navigate ไป Day ที่ตรง + highlight กิจกรรมที่ควรทำตอนนี้พร้อม badge "NOW" กิจกรรมที่ผ่านแล้วแสดงสีจาง — เปิดหน้ามาเห็นทันทีว่าตอนนี้ควรอยู่ที่ไหน ไม่ต้อง scroll หาเอง</div>
         </div>
     </div>
 
@@ -1383,55 +1388,6 @@
 
     <div class="learning-card">
         <strong>Design for sharing</strong> — URL เดียว แชร์ทาง LINE ให้เพื่อนร่วมทริปเปิดได้ทันที ไม่ต้องลงแอป ไม่ต้อง login — ลด barrier ให้ต่ำที่สุด คือสิ่งที่ทำให้คนใช้งานจริง
-    </div>
-
-    <hr class="divider">
-
-    <!-- ===== LIVE EVENT INDICATOR ===== -->
-    <section class="section-intro">
-        <h2>Live Event Indicator</h2>
-        <p>ระหว่างทริป (1-6 พ.ค.) ระบบจะ highlight อัตโนมัติว่า "ตอนนี้ควรอยู่ที่ไหน" ตามวันและเวลาจริง</p>
-    </section>
-
-    <div class="solution-card">
-        <h3>📍 แนวคิด — "You Are Here"</h3>
-        <div class="subtitle">auto-highlight กิจกรรมปัจจุบันตามเวลาจริง ไม่ต้อง scroll หาเอง</div>
-        <div class="tags">
-            <span class="tag blue">Date-Aware</span>
-            <span class="tag green">Time-Based</span>
-            <span class="tag orange">Auto-Scroll</span>
-            <span class="tag purple">Visual Indicator</span>
-        </div>
-        <ul class="features">
-            <li><strong>เปิดหน้า Guidebook → ระบบเช็ควันที่ปัจจุบัน</strong> → auto-navigate ไป Day ที่ตรงกับวันนี้</li>
-            <li><strong>เช็คเวลาปัจจุบัน → highlight กิจกรรมที่ควรทำตอนนี้</strong> เช่น ถ้า 14:00 → highlight "Jiufen Old Street (14:00-17:00)"</li>
-            <li><strong>กิจกรรมที่ผ่านไปแล้ว</strong> แสดงเป็นสีจาง (muted) เพื่อแยกจากกิจกรรมที่ยังไม่ถึง</li>
-            <li><strong>Badge "NOW"</strong> ติดข้างกิจกรรมปัจจุบัน → scan ได้ทันที ไม่ต้องเทียบเวลาเอง</li>
-        </ul>
-    </div>
-
-    <div class="creative-box">
-        <h4>🎯 ทำไมถึงสำคัญ?</h4>
-
-        <div class="creative-item">
-            <div class="ci-title">ลดเวลาหาข้อมูลจาก 10 วินาที → 0 วินาที</div>
-            <div class="ci-desc">ปกติเปิด guidebook ต้อง scroll หาว่า "ตอนนี้ถึงไหนแล้ว" — ด้วย Live Indicator ระบบพาไปเลย ไม่ต้องคิด ไม่ต้องหา</div>
-        </div>
-
-        <div class="creative-item">
-            <div class="ci-title">Context-Aware UX</div>
-            <div class="ci-desc">guidebook ไม่ใช่แค่เอกสาร static — มันรู้ว่า "วันนี้วันไหน" และ "ตอนนี้กี่โมง" แล้วแสดงข้อมูลที่เกี่ยวข้องที่สุดก่อน</div>
-        </div>
-    </div>
-
-    <div class="insight-box">
-        <h4>💡 Implementation Concept</h4>
-        <ul>
-            <li><strong>Date mapping:</strong> วันที่ 1 พ.ค. = Day 1, 2 พ.ค. = Day 2, ... 6 พ.ค. = Day 6</li>
-            <li><strong>Time matching:</strong> แต่ละกิจกรรมมี data-start / data-end → เทียบกับเวลาปัจจุบัน</li>
-            <li><strong>Visual states:</strong> Past (opacity 0.5) → Current (highlight border + NOW badge) → Upcoming (ปกติ)</li>
-            <li><strong>Auto-scroll:</strong> เปิดหน้าครั้งแรก → scrollIntoView() ไปกิจกรรมปัจจุบันทันที</li>
-        </ul>
     </div>
 
     <hr class="divider">
