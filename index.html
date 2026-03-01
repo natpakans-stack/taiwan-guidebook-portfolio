@@ -848,6 +848,35 @@
         }
         .closing .links a:hover { text-decoration: underline; }
 
+        /* ===== SITE FOOTER ===== */
+        .site-footer {
+            text-align: center;
+            padding: 48px 24px 40px;
+            background: var(--bg);
+        }
+        .site-footer img {
+            width: 160px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+        .site-footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+        }
+        .site-footer-links a {
+            color: #9b8ec4;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .site-footer-links a:hover {
+            color: #7c3aed;
+            text-decoration: underline;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 600px) {
             .hero { padding: 60px 20px 44px; }
@@ -1462,7 +1491,7 @@
 </article>
 
 <!-- ===== CLOSING ===== -->
-<footer class="closing">
+<div class="closing">
     <h2>🇹🇼 Built for a real trip</h2>
     <p>โปรเจกต์นี้สร้างขึ้นเพื่อใช้งานจริงในทริปไต้หวัน 1-6 พฤษภาคม 2025 — ทุก feature เกิดจาก pain point จริง แก้ปัญหาจริง ใช้งานจริง</p>
     <div class="stack-icons">
@@ -1477,7 +1506,16 @@
         <a href="https://natpakans-stack.github.io/taiwan-guidebook/" target="_blank">Live Demo</a>
         <a href="https://github.com/natpakans-stack/taiwan-guidebook" target="_blank">GitHub Repo</a>
     </div>
-    <p style="margin-top: 20px; font-size: 0.8rem; color: #64748b;">Taiwan Travel Guidebook V1.8 — Design Thinking Portfolio</p>
+</div>
+
+<!-- ===== SITE FOOTER ===== -->
+<footer class="site-footer">
+    <img src="https://natpakans-stack.github.io/talk-to-figma-mcp/assets/aw-mascot.avif" alt="Aw mascot">
+    <div class="site-footer-links">
+        <a href="https://natpakans-stack.github.io/line-messaging-portfolio">line-messaging-portfolio</a>
+        <a href="https://natpakans-stack.github.io/parking-reminder-portfolio">parking-reminder-portfolio</a>
+        <a href="https://natpakans-stack.github.io/carpark_live_dashboard">carpark_live_dashboard</a>
+    </div>
 </footer>
 
 </body>
