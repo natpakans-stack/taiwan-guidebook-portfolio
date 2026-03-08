@@ -912,7 +912,7 @@
     <div class="hero-inner">
         <div class="hero-badge">Side Project — UX/UI Design</div>
         <h1><span class="emoji">🇹🇼</span> Taiwan Travel Guidebook</h1>
-        <p>คู่มือเที่ยวไต้หวันแบบ Mobile-First — รวมแผนเที่ยว 6 วัน, Budget Tracker, เอกสาร ไว้ในเว็บเดียว แชร์ผ่าน URL ไม่ต้องลงแอป</p>
+        <p>คู่มือเที่ยวไต้หวันแบบ Mobile-First — รวมแผนเที่ยว 6 วัน, Transit Map, Budget Tracker, เอกสาร ไว้ในเว็บเดียว แชร์ผ่าน URL ไม่ต้องลงแอป</p>
         <a href="https://natpakans-stack.github.io/taiwan-guidebook/" class="hero-link">เปิดคู่มือเที่ยว</a>
     </div>
 </header>
@@ -1023,8 +1023,8 @@
 
     <!-- ===== SOLUTION ===== -->
     <section class="section-intro">
-        <h2>Solution — 3 หน้า ครบทุกอย่าง</h2>
-        <p>ออกแบบเป็น 3 หน้า HTML แยกตามหน้าที่ เชื่อมกันด้วย navigation</p>
+        <h2>Solution — 4 หน้า ครบทุกอย่าง</h2>
+        <p>ออกแบบเป็น 4 หน้า HTML แยกตามหน้าที่ เชื่อมกันด้วย navigation</p>
     </section>
 
     <div class="solution-card">
@@ -1037,8 +1037,8 @@
             <span class="tag orange">Collapsible Sections</span>
         </div>
         <ul class="features">
-            <li><strong>6-day itinerary</strong> — Taipei (Day 1-3) → Kaohsiung (Day 4-6) + Bonus section</li>
-            <li><strong>Bottom nav</strong> — เลื่อนสลับ Day 1-6 ได้เร็วบนมือถือ</li>
+            <li><strong>6-day itinerary</strong> — PRE-GO → Taipei (Day 1-3) → Kaohsiung (Day 4-6) → POST + Bonus</li>
+            <li><strong>Bottom nav + Hamburger menu</strong> — มือถือเลื่อนสลับ Day 1-6, Desktop ใช้ drawer menu</li>
             <li><strong>Bilingual toggle (TH/EN)</strong> — สลับภาษาได้ทันทีสำหรับ immigration</li>
             <li><strong>Collapsible sections</strong> — กดพับ/ขยาย ลด scroll</li>
             <li><strong>Trip dates banner</strong> — วันลา สรุปสำหรับแชร์ทีม</li>
@@ -1079,12 +1079,30 @@
         </ul>
     </div>
 
+    <div class="solution-card">
+        <h3>🚇 Transit Map — แผนที่เส้นทาง รฟฟ.</h3>
+        <div class="subtitle">transit-map.html — zoomable MRT maps + daily routes</div>
+        <div class="tags">
+            <span class="tag blue">Zoomable Maps</span>
+            <span class="tag green">3 Tabs</span>
+            <span class="tag orange">Daily Routes</span>
+            <span class="tag purple">PRE/POST</span>
+        </div>
+        <ul class="features">
+            <li><strong>Taipei + Kaohsiung MRT maps</strong> — รูปแผนที่จริง zoom in/out ได้ ลากดูได้</li>
+            <li><strong>เส้นทางรายวัน</strong> — PRE-GO → Day 1-6 → POST แสดง flow การเดินทางแต่ละวัน</li>
+            <li><strong>Route badges</strong> — สี MRT สายแดง/น้ำเงิน/เขียว/ส้ม + Bus/Walk/HSR/Ferry/LRT</li>
+            <li><strong>EasyCard refund info</strong> — วิธีคืนเงิน/ใช้ให้หมดก่อนกลับ</li>
+            <li><strong>Luggage logistics</strong> — ขั้นตอนฝาก/รับกระเป๋าทั้ง Day 1 (ไทเป) และ Day 6 (เกาสง)</li>
+        </ul>
+    </div>
+
     <hr class="divider">
 
     <!-- ===== UI PREVIEW ===== -->
     <section class="section-intro">
         <h2>UI Preview</h2>
-        <p>ตัวอย่างหน้าจอหลักทั้ง 3 หน้าบนมือถือ</p>
+        <p>ตัวอย่างหน้าจอหลักทั้ง 4 หน้าบนมือถือ</p>
     </section>
 
     <div class="preview-grid">
@@ -1104,9 +1122,9 @@
                             <div class="mock-nav-pill">DAY 4</div>
                         </div>
                         <div class="mock-card">
-                            <div class="mc-title">Day 1 — Taipei City</div>
-                            <div class="mc-desc">สนามบิน Taoyuan → Taipei Main Station → Ximending</div>
-                            <div class="mc-time">08:00 - 21:00</div>
+                            <div class="mc-title">PRE-GO → Day 1 Taipei</div>
+                            <div class="mc-desc">คอนโด → DMK → TPE 07:55 → ฝากกระเป๋า → วัดหลงซาน</div>
+                            <div class="mc-time">23:30 - 19:00</div>
                         </div>
                         <div class="mock-card">
                             <div class="mc-title">Jiufen Old Street</div>
@@ -1116,6 +1134,7 @@
                         <div class="mock-bottom-nav">
                             <div class="mock-bnav-item active"><div class="dot"></div>DAY 1</div>
                             <div class="mock-bnav-item"><div class="dot"></div>DAY 2</div>
+                            <div class="mock-bnav-item"><div class="dot"></div>Transit</div>
                             <div class="mock-bnav-item"><div class="dot"></div>Docs</div>
                             <div class="mock-bnav-item"><div class="dot"></div>Budget</div>
                         </div>
@@ -1262,11 +1281,15 @@
 
     <!-- ===== VERSION HISTORY ===== -->
     <section class="section-intro">
-        <h2>Iterate — 8 Versions ใน 2 สัปดาห์</h2>
+        <h2>Iterate — 9 Versions ใน 3 สัปดาห์</h2>
         <p>ทุก version เกิดจาก feedback จริงระหว่างเตรียมทริป</p>
     </section>
 
     <div class="version-timeline">
+        <div class="version-item">
+            <div class="version-badge v-purple">V1.9</div>
+            <div class="version-desc"><strong>Transit Map + Flight details</strong> — หน้าแผนที่ MRT (zoomable) + เส้นทางรายวัน, เพิ่ม PRE-GO/POST ตารางคอนโด↔DMK, ข้อมูลเที่ยวบิน SL398/SL393, ฝากกระเป๋า, EasyCard คืนเงิน, hamburger menu desktop, อัปเดต Drive links</div>
+        </div>
         <div class="version-item">
             <div class="version-badge v-purple">V1.8</div>
             <div class="version-desc"><strong>Docs page</strong> — หน้าเอกสารรวม card-based, Google Drive integration, nav ครบทุกหน้า</div>
@@ -1352,17 +1375,17 @@
     <!-- ===== RESULTS ===== -->
     <section class="section-intro">
         <h2>Results</h2>
-        <p>ผลลัพธ์จากการ iterate 8 versions</p>
+        <p>ผลลัพธ์จากการ iterate 9 versions</p>
     </section>
 
     <div class="metrics">
         <div class="metric-card">
-            <div class="num">8</div>
-            <div class="label">Versions (2 สัปดาห์)</div>
+            <div class="num">9</div>
+            <div class="label">Versions (3 สัปดาห์)</div>
         </div>
         <div class="metric-card">
-            <div class="num green">3</div>
-            <div class="label">Pages (Guide + Budget + Docs)</div>
+            <div class="num green">4</div>
+            <div class="label">Pages (Guide + Budget + Docs + Transit)</div>
         </div>
         <div class="metric-card">
             <div class="num orange">6</div>
